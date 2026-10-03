@@ -2118,52 +2118,57 @@ ul {
 }
 
 .modal-footer {
-  padding-top: 1.2rem;
-  margin-top: 1.2rem;
+  padding: 1rem 1.6rem 1.6rem 1.6rem;
   border-top: 1px solid var(--border-color);
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column-reverse;
+  gap: 0.75rem;
   width: 100%;
 }
 
 .btn-secondary {
-  background-color: var(--bg-cream);
-  color: var(--text-dark);
-  border: 1.5px solid var(--border-color);
-  padding: 0.8rem 1.6rem;
-  border-radius: var(--radius-pill);
+  background: transparent !important;
+  color: var(--text-muted) !important;
+  border: 1.5px solid var(--border-color) !important;
+  padding: 0.75rem 1.4rem;
+  border-radius: 12px;
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.25s ease;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-secondary:hover {
-  background-color: var(--border-color);
-  transform: translateY(-2px);
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: var(--text-dark) !important;
 }
 
 .btn-primary-modal {
-  background-color: var(--whatsapp-green) !important;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
   color: #FFFFFF !important;
   border: none;
-  padding: 0.8rem 1.6rem;
-  border-radius: var(--radius-pill);
+  height: 50px;
+  width: 100%;
+  border-radius: 14px;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+  justify-content: center;
+  gap: 0.65rem;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
   transition: all 0.25s ease;
+  cursor: pointer;
 }
 
 .btn-primary-modal:hover {
-  background-color: var(--whatsapp-hover) !important;
+  background: linear-gradient(135deg, #1ebe58 0%, #0e7368 100%) !important;
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
 }
 
 /* ==========================================================================
@@ -2234,16 +2239,17 @@ html, body {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    max-width: 55%;
+    max-width: 65%;
     overflow: hidden;
   }
   .brand-logo-img {
-    height: 38px !important;
-    max-width: 48px !important;
+    height: 36px !important;
+    max-width: 44px !important;
   }
   .brand-logo-text-img {
-    height: 30px !important;
-    max-width: 110px !important;
+    height: 26px !important;
+    max-width: 120px !important;
+    object-fit: contain;
   }
   .header-actions {
     display: flex;
@@ -2398,102 +2404,7 @@ html, body {
     padding: 0.85rem;
   }
 
-  /* About Section Mobile */
-  .about-image-stack {
-    margin-bottom: 1.5rem;
-  }
-  .main-img {
-    width: 100%;
-    height: 250px;
-  }
-  .sub-img {
-    display: none;
-  }
-  .experience-badge {
-    top: 15px;
-    right: 15px;
-    padding: 0.6rem 0.9rem;
-  }
-  .exp-number {
-    font-size: 1.6rem;
-  }
-  .exp-text {
-    font-size: 0.65rem;
-  }
-  .about-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  .about-actions .btn {
-    width: 100%;
-  }
-
-  /* Package Filters Mobile Horizontal Scroll */
-  .package-filters {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    padding-bottom: 0.5rem;
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
-  }
-  .filter-btn {
-    flex-shrink: 0;
-  }
-
-  /* Section Titles Mobile */
-  .section-title {
-    font-size: 1.85rem;
-  }
-
-  /* Fleet Mobile */
-  .fleet-specs {
-    grid-template-columns: 1fr;
-  }
-
-  /* Tour Packages Subpage Grid */
-  .tour-packages-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem;
-  }
-
-  /* Fare Calculator Mobile */
-  .calc-card {
-    padding: 1.4rem;
-  }
-
-  /* Destinations Mobile */
-  .destinations-slider {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
-  }
-  .dest-card {
-    height: 200px;
-  }
-  .dest-overlay {
-    padding: 0.9rem;
-  }
-  .dest-overlay h4 {
-    font-size: 1rem;
-  }
-
-  /* CTA Banner Mobile */
-  .cta-box {
-    padding: 2.5rem 1.2rem;
-    border-radius: var(--radius-lg);
-  }
-  .cta-content h2 {
-    font-size: 1.85rem;
-  }
-  .cta-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-  .cta-buttons .btn {
-    width: 100%;
-  }
-
-  /* Footer & Floating Bar Mobile */
+  /* Footer & Bottom Floating Bar Mobile */
   .site-footer {
     width: 100% !important;
     box-sizing: border-box !important;
@@ -2510,15 +2421,15 @@ html, body {
     text-align: center;
   }
   .floating-contact-bar {
-    bottom: 20px;
-    right: 15px;
-    gap: 10px;
+    bottom: 80px !important; /* elevated above Netlify & bottom bars */
+    right: 16px !important;
+    gap: 12px;
     z-index: 9999;
   }
   .float-btn {
-    width: 48px;
-    height: 48px;
-    font-size: 1.2rem;
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.3rem !important;
   }
 
   /* Booking Modal Mobile */
@@ -2536,26 +2447,12 @@ html, body {
   .modal-header {
     padding: 1.2rem 1.4rem;
   }
-  .modal-footer {
-    padding: 0.8rem 1.4rem 1.4rem 1.4rem;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-  .modal-footer .btn {
-    width: 100%;
-  }
 }
 
-@media (max-width: 480px) {
-  .brand-logo-text-img {
-    display: none !important;
-  }
+@media (max-width: 520px) {
+  /* On small mobile screens (< 520px), hide top navbar 'Book a Cab' button to leave ample room for emblem + text logo */
   .header-actions .btn-primary-nav {
-    padding: 0.4rem 0.65rem;
-    font-size: 0.72rem;
-  }
-  .destinations-slider {
-    grid-template-columns: 1fr;
+    display: none !important;
   }
 }
 
