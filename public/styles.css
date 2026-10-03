@@ -2645,16 +2645,55 @@ html, body {
     gap: 0.8rem;
     text-align: center;
   }
+  /* CTA Banner Section Mobile Optimization */
+  .cta-banner-section {
+    padding: 2.2rem 0 !important;
+  }
+  .cta-box {
+    padding: 2.2rem 1.2rem !important;
+    border-radius: 20px !important;
+    text-align: center;
+  }
+  .cta-badge {
+    font-size: 0.75rem !important;
+    padding: 0.35rem 1rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  .cta-content h2 {
+    font-size: 1.65rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.8rem !important;
+  }
+  .cta-content p {
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .cta-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+  .cta-buttons .btn {
+    width: 100% !important;
+    max-width: 300px !important;
+    justify-content: center !important;
+    padding: 0.8rem 1.2rem !important;
+    font-size: 0.92rem !important;
+  }
+
   .floating-contact-bar {
-    bottom: 80px !important; /* elevated above Netlify & bottom bars */
+    bottom: 20px !important;
     right: 16px !important;
-    gap: 12px;
-    z-index: 9999;
+    gap: 10px;
+    z-index: 99999;
   }
   .float-btn {
-    width: 50px !important;
-    height: 50px !important;
-    font-size: 1.3rem !important;
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.25rem !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3) !important;
   }
 
   /* Booking Modal Mobile */
