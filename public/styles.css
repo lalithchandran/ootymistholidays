@@ -1666,20 +1666,38 @@ ul {
   box-shadow: 0 6px 18px rgba(216, 93, 56, 0.45);
 }
 
+.star-rating-box {
+  background: var(--bg-cream);
+  border: 1.5px solid var(--border-color);
+  border-radius: 16px;
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.3rem;
+  transition: border-color 0.2s ease;
+}
+
+.star-rating-box:hover {
+  border-color: #FFB800;
+}
+
 .star-rating-select {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.4rem 0;
+  gap: 0.4rem;
 }
 
 .star-btn {
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   color: #CBD5E1;
   cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
+  padding: 0.1rem;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
 }
 
 .star-btn.active {
@@ -1687,12 +1705,131 @@ ul {
 }
 
 .star-btn:hover {
-  transform: scale(1.2);
+  transform: scale(1.25);
+  color: #FFC72C;
+}
+
+.rating-badge {
+  background: rgba(255, 184, 0, 0.12);
+  color: #D97706;
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .form-group label i {
-  color: var(--accent-rust);
+  color: var(--primary-green);
   margin-right: 0.35rem;
+}
+
+.review-modal-dialog {
+  max-width: 640px;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.review-modal-header {
+  background: linear-gradient(135deg, #0F2F28 0%, #1A4D40 100%);
+  padding: 1.6rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 184, 0, 0.15);
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  color: #FFB800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.header-title-wrapper h3 {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.2rem;
+}
+
+.header-title-wrapper p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.review-form {
+  padding: 1.8rem 2rem;
+}
+
+.review-modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.2rem 2rem 1.8rem 2rem;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-card);
+}
+
+.btn-secondary-modal {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1.5px solid var(--border-color);
+  padding: 0.75rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary-modal:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-dark);
+  border-color: var(--text-muted);
+}
+
+.btn-submit-review {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%) !important;
+  color: #FFFFFF !important;
+  border: none;
+  padding: 0.75rem 1.8rem !important;
+  height: 48px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  box-shadow: 0 6px 20px rgba(15, 47, 40, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit-review:hover {
+  background: linear-gradient(135deg, var(--accent-rust) 0%, var(--accent-rust-hover) 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(216, 93, 56, 0.35);
 }
 
 .review-author {
@@ -3839,6 +3976,32 @@ html, body {
 /* Specific Card Text & Inner Elements for Dark Mode */
 [data-theme="dark"] .review-text {
   color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .star-rating-box {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .rating-badge {
+  background: rgba(255, 184, 0, 0.15);
+  color: #FBBF24;
+  border-color: rgba(255, 184, 0, 0.3);
+}
+
+[data-theme="dark"] .review-modal-footer {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .btn-secondary-modal {
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .btn-secondary-modal:hover {
+  background-color: #334155;
+  color: #FFFFFF;
 }
 
 [data-theme="dark"] .review-user {

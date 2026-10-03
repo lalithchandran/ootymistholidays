@@ -45,7 +45,7 @@
 
       <div class="header-actions">
         <a href="tel:+919047512030" class="btn btn-outline-nav"><i class="fa-solid fa-phone"></i> Call Now</a>
-        <button class="btn btn-primary-nav" onclick="openBookingModal('General Cab Booking')"><i class="fa-solid fa-car"></i> Book a Cab</button>
+        <button class="btn btn-primary-nav" onclick="openBookingModal('General Cab Booking')"><i class="fa-brands fa-whatsapp"></i> Get Instant Quote on WhatsApp</button>
         <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
           <i class="fa-solid fa-moon" id="themeIcon"></i>
         </button>
@@ -823,16 +823,21 @@
 
   <!-- WRITE A REVIEW MODAL -->
   <div class="modal-backdrop" id="reviewModal">
-    <div class="modal-dialog">
-      <div class="modal-header">
-        <div>
-          <h3>Share Your Experience</h3>
-          <p>Write a review for JC Cabs & Tours Ooty</p>
+    <div class="modal-dialog review-modal-dialog">
+      <div class="modal-header review-modal-header">
+        <div class="header-title-wrapper">
+          <div class="header-icon-badge">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div>
+            <h3>Share Your Experience</h3>
+            <p>Write a verified review for JC Cabs & Tours Ooty</p>
+          </div>
         </div>
         <button class="modal-close" onclick="closeReviewModal()">&times;</button>
       </div>
 
-      <form id="reviewForm" onsubmit="handleReviewSubmit(event)">
+      <form id="reviewForm" onsubmit="handleReviewSubmit(event)" class="review-form">
         <div class="modal-form-grid">
           <div class="form-group">
             <label for="rName"><i class="fa-solid fa-user"></i> Your Name *</label>
@@ -846,13 +851,15 @@
 
           <div class="form-group full-width">
             <label><i class="fa-solid fa-star"></i> Your Rating *</label>
-            <div class="star-rating-select">
-              <button type="button" class="star-btn active" onclick="setRating(1)"><i class="fa-solid fa-star"></i></button>
-              <button type="button" class="star-btn active" onclick="setRating(2)"><i class="fa-solid fa-star"></i></button>
-              <button type="button" class="star-btn active" onclick="setRating(3)"><i class="fa-solid fa-star"></i></button>
-              <button type="button" class="star-btn active" onclick="setRating(4)"><i class="fa-solid fa-star"></i></button>
-              <button type="button" class="star-btn active" onclick="setRating(5)"><i class="fa-solid fa-star"></i></button>
-              <span id="ratingValueText" style="margin-left: 0.8rem; font-weight: 700; color: #FFB800;">5.0 Stars</span>
+            <div class="star-rating-box">
+              <div class="star-rating-select">
+                <button type="button" class="star-btn active" onclick="setRating(1)"><i class="fa-solid fa-star"></i></button>
+                <button type="button" class="star-btn active" onclick="setRating(2)"><i class="fa-solid fa-star"></i></button>
+                <button type="button" class="star-btn active" onclick="setRating(3)"><i class="fa-solid fa-star"></i></button>
+                <button type="button" class="star-btn active" onclick="setRating(4)"><i class="fa-solid fa-star"></i></button>
+                <button type="button" class="star-btn active" onclick="setRating(5)"><i class="fa-solid fa-star"></i></button>
+              </div>
+              <span id="ratingValueText" class="rating-badge"><i class="fa-solid fa-circle-check"></i> 5.0 Stars (Excellent)</span>
             </div>
             <input type="hidden" id="rStars" value="5">
           </div>
@@ -863,9 +870,9 @@
           </div>
         </div>
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="closeReviewModal()">Cancel</button>
-          <button type="submit" class="btn btn-primary-modal">
+        <div class="modal-footer review-modal-footer">
+          <button type="button" class="btn btn-secondary-modal" onclick="closeReviewModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary-modal btn-submit-review">
             <i class="fa-solid fa-paper-plane"></i> Submit Review
           </button>
         </div>

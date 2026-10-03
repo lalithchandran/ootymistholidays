@@ -463,8 +463,16 @@ function setRating(rating) {
   const ratingText = document.getElementById('ratingValueText');
   const starBtns = document.querySelectorAll('.star-rating-select .star-btn');
   
+  const ratingLabels = {
+    1: '1.0 Stars (Poor)',
+    2: '2.0 Stars (Fair)',
+    3: '3.0 Stars (Good)',
+    4: '4.0 Stars (Very Good)',
+    5: '5.0 Stars (Excellent)'
+  };
+  
   if (starsInput) starsInput.value = rating;
-  if (ratingText) ratingText.textContent = `${rating}.0 Stars`;
+  if (ratingText) ratingText.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${ratingLabels[rating] || rating + '.0 Stars'}`;
   
   starBtns.forEach((btn, index) => {
     if (index < rating) {
