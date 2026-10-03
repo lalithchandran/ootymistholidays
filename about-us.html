@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | JC CABS & TOURS OOTY</title>
+  <meta name="description" content="Learn about JC Cabs Ooty - Ooty's most trusted local taxi & tour operator with 10+ years experience, expert hill drivers, transparent fares & clean luxury fleet.">
+  <meta name="keywords" content="About JC Cabs Ooty, Ooty cab company, best taxi service Ooty, hill drivers Ooty, reliable Ooty cab operator">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Favicon / Title Bar Logo -->
+  <link rel="icon" type="image/png" href="assets/logo/logo with no text.png">
+  <link rel="apple-touch-icon" href="assets/logo/logo with no text.png">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <!-- Header / Navigation (3 Main Pages Only) -->
+  <header class="site-header" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/logo/logo with no text.png" alt="JC Cabs Logo" class="brand-logo-img logo-light-icon">
+        <img src="assets/logo/dark mode no text logo.png" alt="JC Cabs Dark Logo" class="brand-logo-img logo-dark-icon">
+        
+        <img src="assets/logo/logo only text.png" alt="JC CABS & TOURS OOTY" class="brand-logo-text-img logo-light-text">
+        <img src="assets/logo/dark mode text only logo.png" alt="JC CABS & TOURS OOTY" class="brand-logo-text-img logo-dark-text">
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="tour-packages.html" class="nav-link">Tour Packages</a></li>
+          <li><a href="about-us.html" class="nav-link active">About Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+919047512030" class="btn btn-outline-nav"><i class="fa-solid fa-phone"></i> Call Now</a>
+        <button class="btn btn-primary-nav" onclick="openBookingModal('General Cab Booking')"><i class="fa-solid fa-car"></i> Book a Cab</button>
+        <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER BANNER -->
+  <section class="page-header-banner">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>About Us</span>
+      </div>
+      <h1 class="page-title">About JC CABS & TOURS OOTY</h1>
+      <p class="page-subtitle">
+        Your dedicated local travel companion in the Nilgiri Hills. Over 10 years of delivering safe hill rides, scenic sightseeing, and unmatched hospitality.
+      </p>
+    </div>
+  </section>
+
+  <!-- OUR STORY SECTION -->
+  <section class="section-padding">
+    <div class="container">
+      
+      <div class="about-story-grid">
+        <div class="about-image-stack">
+          <div class="main-img-wrap">
+            <img src="assets/Ooty.jpeg" alt="JC Cabs Ooty Scenic Mountain Drive" class="about-main-img">
+          </div>
+          <div class="sub-img-wrap">
+            <img src="assets/service_sightseeing.jpg" alt="JC Cabs Sightseeing Taxi Ooty" class="about-sub-img">
+          </div>
+          <div class="experience-badge-pill">
+            <div class="badge-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="badge-text">
+              <span class="badge-num">10+ Years</span>
+              <span class="badge-lbl">Nilgiri Travel Excellence</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-story-content">
+          <div class="section-tag"><i class="fa-solid fa-heart"></i> Our Heritage & Commitment</div>
+          <h2>Welcome to JC Cabs Ooty – Driving Smiles Across the Nilgiris</h2>
+          <p>
+            Founded in the heart of Ooty Town on Commercial Road, <strong>JC Cabs</strong> was created with a simple vision: to offer travelers clean, reliable, and stress-free taxi services across Ooty, Coonoor, Kotagiri, and outstation routes.
+          </p>
+          <p>
+            Navigating Nilgiri mountain roads with 36 steep hairpin bends requires skill, patience, and deep local knowledge. All our drivers are seasoned Nilgiri locals who prioritize passenger safety, punctuality, and courteous service.
+          </p>
+          <p>
+            Whether you need a quick airport transfer from Coimbatore (CJB), a 1-day local sightseeing tour, or a multi-day family holiday package, JC Cabs ensures flat transparent pricing with zero surprise charges.
+          </p>
+        </div>
+      </div>
+
+      <!-- STATS COUNTER BANNER -->
+      <div class="stats-counter-section">
+        <div class="container stats-grid">
+          <div class="stat-item">
+            <div class="stat-num">2,500+</div>
+            <div class="stat-lbl">Happy Tourists Served</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">15+</div>
+            <div class="stat-lbl">Clean Fleet Cabs</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">10+</div>
+            <div class="stat-lbl">Years Local Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">4.9 ★</div>
+            <div class="stat-lbl">Customer Rating</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHY CHOOSE US / GUARANTEES -->
+      <div class="section-header text-center" style="margin-top: 4rem;">
+        <div class="section-tag center-tag"><i class="fa-solid fa-shield-halved"></i> Our Guarantees</div>
+        <h2 class="section-title">Why Thousands Choose JC Cabs Ooty</h2>
+        <p class="section-subtitle">We go the extra mile to make your Nilgiri holiday memorable, safe, and pleasant.</p>
+      </div>
+
+      <div class="guarantees-grid">
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-user-shield"></i></div>
+          <h4>Expert Hill Drivers</h4>
+          <p>Our drivers have 5+ years of mountain hairpin driving experience. Licensed, background-verified, and polite local guides.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-receipt"></i></div>
+          <h4>100% Transparent Fares</h4>
+          <p>What we quote is what you pay. Fuel, driver batta, and taxes included upfront with no hidden surcharges at the end of the trip.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-car-sparkles"></i></div>
+          <h4>Spotless AC Vehicles</h4>
+          <p>From Swift Dzire sedans to Innova Crysta SUVs and Tempo Travellers – all vehicles are sanitized and serviced before every ride.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-headset"></i></div>
+          <h4>24/7 Personal Support</h4>
+          <p>Have flight delays or itinerary changes? Our local helpline is active 24/7 via phone and instant WhatsApp support.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VERIFIED TOURIST REVIEWS SECTION -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag center-tag"><i class="fa-solid fa-thumbs-up"></i> Verified Tourist Reviews</div>
+        <h2 class="section-title">What Our Travelers Say About JC Cabs</h2>
+        <p class="section-subtitle">Over 2,500+ happy families, couples, and group travelers trust JC Cabs for their Nilgiri holiday.</p>
+      </div>
+
+      <div class="reviews-grid">
+
+        <div class="review-card">
+          <div class="review-card-header">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Guest</span>
+          </div>
+          <p class="review-text">"We booked an Innova Crysta for 3 days from Coimbatore airport to Ooty and Coonoor. Driver Ramesh was super polite, punctual, and knew all the scenic spots. Zero hassle booking on WhatsApp!"</p>
+          <div class="review-user">
+            <div class="user-avatar">RP</div>
+            <div class="user-info">
+              <h5>Rajesh Patel</h5>
+              <span>Travelled from Ahmedabad • Airport Transfer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card-header">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Guest</span>
+          </div>
+          <p class="review-text">"Best cab service in Ooty! The Swift Dzire was spotless and clean. The driver helped us get toy train tickets and gave us ample time to enjoy Pykara boating without rushing us."</p>
+          <div class="review-user">
+            <div class="user-avatar">AM</div>
+            <div class="user-info">
+              <h5>Ananya & Karthik</h5>
+              <span>Honeymoon Couple, Bangalore • Sightseeing Tour</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card-header">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Guest</span>
+          </div>
+          <p class="review-text">"We hired a 12-seater Tempo Traveller for our corporate family outing. The vehicle was very smooth on mountain curves and the fare was very reasonable compared to others."</p>
+          <div class="review-user">
+            <div class="user-avatar">VS</div>
+            <div class="user-info">
+              <h5>Venkatesh S.</h5>
+              <span>Group Tour, Chennai • Outstation & Group Ride</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner-section">
+    <div class="container cta-box">
+      <div class="cta-content">
+        <div class="cta-badge">Experience Nilgiri Travel at Its Best</div>
+        <h2>Ready to Explore Ooty with JC Cabs?</h2>
+        <p>Book your cab or custom tour package today and enjoy comfortable mountain travel with trusted local drivers.</p>
+        
+        <div class="cta-buttons">
+          <button class="btn btn-cta-primary" onclick="openBookingModal('About Page Booking')">
+            <i class="fa-solid fa-calendar-check"></i> Book Cab Online
+          </button>
+          <a href="https://wa.me/919047512030?text=Hi%20JC%20Cabs,%20I%20want%20to%20book%20a%20cab" target="_blank" class="btn btn-cta-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp +91 90475 12030
+          </a>
+          <a href="tel:+919047512030" class="btn btn-cta-call">
+            <i class="fa-solid fa-phone"></i> Call Direct
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo">
+          <img src="assets/logo/dark mode full logo.png" alt="JC CABS & TOURS OOTY Logo" class="footer-logo-img">
+        </a>
+        <p class="footer-about">
+          Ooty's premiere taxi and tour operator. Reliable local sightseeing, airport transfers, and outstation cabs across Tamil Nadu, Karnataka, and Kerala.
+        </p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/919047512030" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Main Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tour-packages.html">Tour Packages</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Cab Services</h4>
+        <ul>
+          <li><a href="index.html#fleet">Swift Dzire / Sedan Taxi</a></li>
+          <li><a href="index.html#fleet">Toyota Innova Crysta SUV</a></li>
+          <li><a href="index.html#fleet">Ertiga 6-Seater Cab</a></li>
+          <li><a href="index.html#fleet">Tempo Traveller Minibus</a></li>
+          <li><a href="index.html#calculator">Coimbatore Airport Transfer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="contact-info-list">
+          <li><i class="fa-solid fa-location-dot"></i> Commercial Road, Near Charring Cross, Ooty, Nilgiris - 643001</li>
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:+919047512030">+91 90475 12030</a></li>
+          <li><i class="fa-solid fa-envelope"></i> booking@jccabsooty.com</li>
+          <li><i class="fa-solid fa-clock"></i> Open 24 Hours / 7 Days a week</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 JC CABS & TOURS OOTY. All Rights Reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY FLOATING QUICK ACTION BUTTONS -->
+  <div class="floating-contact-bar">
+    <a href="tel:+919047512030" class="float-btn float-call" title="Call Us Now">
+      <i class="fa-solid fa-phone"></i>
+      <span class="float-tooltip">Call +91 90475 12030</span>
+    </a>
+    <a href="https://wa.me/919047512030?text=Hi%20JC%20Cabs,%20I%20am%20interested%20in%20learning%20more%20about%20your%20services" target="_blank" class="float-btn float-wa" title="WhatsApp Us">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="float-tooltip">Instant WhatsApp Quote</span>
+    </a>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <h3 id="modalTitle">Book Your Ooty Cab</h3>
+          <p>Fill details for instant confirmation & best rate quote</p>
+        </div>
+        <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+      </div>
+
+      <form id="modalBookingForm" onsubmit="handleModalSubmit(event)">
+        <input type="hidden" id="modalPackageName" value="General Cab Booking">
+        
+        <div class="modal-form-grid">
+          <div class="form-group">
+            <label for="mName">Your Full Name *</label>
+            <input type="text" id="mName" placeholder="e.g. Rahul Sharma" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mPhone">Mobile / WhatsApp Number *</label>
+            <input type="tel" id="mPhone" placeholder="e.g. 9876543210" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mDate">Travel Date *</label>
+            <input type="date" id="mDate" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mCab">Cab Preferred *</label>
+            <select id="mCab" required>
+              <option value="Sedan (Swift Dzire/Etios) - 4 Seater">Sedan (Swift Dzire/Etios) - 4 Seater</option>
+              <option value="SUV (Toyota Innova Crysta) - 7 Seater">SUV (Toyota Innova Crysta) - 7 Seater</option>
+              <option value="SUV (Ertiga) - 6 Seater">SUV (Ertiga) - 6 Seater</option>
+              <option value="Tempo Traveller - 12 Luxury Seater">Tempo Traveller - 12 Luxury Seater</option>
+              <option value="Tempo Traveller - 14-26 Seater">Tempo Traveller - 14-26 Seater</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="mPickup">Pickup Address / Hotel / Airport *</label>
+            <input type="text" id="mPickup" placeholder="e.g. Savoy Hotel Ooty / Coimbatore Airport" required>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="mNotes">Special Requirements (Optional)</label>
+            <textarea id="mNotes" rows="2" placeholder="e.g. Toy train assistance, child seat, morning pickup..."></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeBookingModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary-modal">
+            <i class="fa-brands fa-whatsapp"></i> Send Booking via WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

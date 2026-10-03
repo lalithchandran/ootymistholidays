@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ooty Tour Packages | JC CABS & TOURS OOTY</title>
+  <meta name="description" content="Explore best Ooty sightseeing tour packages. Local Ooty, Pykara lake, Mudumalai safari, Coonoor tea gardens & Avalanche eco tours with private cabs & expert drivers.">
+  <meta name="keywords" content="Ooty tour packages, Ooty sightseeing cab, Pykara lake package, Coonoor tour cab, Avalanche lake trip, Mudumalai safari cab Ooty">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Favicon / Title Bar Logo -->
+  <link rel="icon" type="image/png" href="assets/logo/logo with no text.png">
+  <link rel="apple-touch-icon" href="assets/logo/logo with no text.png">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <!-- Header / Navigation (3 Main Pages Only) -->
+  <header class="site-header" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/logo/logo with no text.png" alt="JC Cabs Logo" class="brand-logo-img logo-light-icon">
+        <img src="assets/logo/dark mode no text logo.png" alt="JC Cabs Dark Logo" class="brand-logo-img logo-dark-icon">
+        
+        <img src="assets/logo/logo only text.png" alt="JC CABS & TOURS OOTY" class="brand-logo-text-img logo-light-text">
+        <img src="assets/logo/dark mode text only logo.png" alt="JC CABS & TOURS OOTY" class="brand-logo-text-img logo-dark-text">
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="tour-packages.html" class="nav-link active">Tour Packages</a></li>
+          <li><a href="about-us.html" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+919047512030" class="btn btn-outline-nav"><i class="fa-solid fa-phone"></i> Call Now</a>
+        <button class="btn btn-primary-nav" onclick="openBookingModal('General Cab Booking')"><i class="fa-solid fa-car"></i> Book a Cab</button>
+        <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER BANNER -->
+  <section class="page-header-banner">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Tour Packages</span>
+      </div>
+      <div class="section-tag center-tag" style="background: rgba(255,255,255,0.15); color: #fff; margin-bottom: 1rem;"><i class="fa-solid fa-compass"></i> EXPLORE THE NILGIRIS</div>
+      <h1 class="page-title">Popular Ooty Taxi Tour Packages</h1>
+      <p class="page-subtitle">
+        Choose from flexible Ooty sightseeing taxi packages covering local attractions, Coonoor, Pykara, Avalanche, Masinagudi, Mudumalai and scenic Nilgiri destinations.
+      </p>
+    </div>
+  </section>
+
+  <!-- TOUR PACKAGES SECTION -->
+  <section class="section-padding" id="packages">
+    <div class="container">
+      
+      <!-- Filter Bar -->
+      <div class="tour-filter-bar">
+        <button class="filter-btn active" onclick="filterPackages('all', this)"><i class="fa-solid fa-border-all"></i> All Packages</button>
+        <button class="filter-btn" onclick="filterPackages('local', this)"><i class="fa-solid fa-camera"></i> Ooty Local</button>
+        <button class="filter-btn" onclick="filterPackages('wildlife', this)"><i class="fa-solid fa-tree"></i> Pykara & Avalanche</button>
+        <button class="filter-btn" onclick="filterPackages('coonoor', this)"><i class="fa-solid fa-mug-hot"></i> Coonoor Tour</button>
+        <button class="filter-btn" onclick="filterPackages('outstation', this)"><i class="fa-solid fa-route"></i> Trekking & Group</button>
+      </div>
+
+      <!-- Packages Grid -->
+      <div class="tour-packages-grid">
+
+        <!-- Package 1: Ooty Local Sightseeing Package -->
+        <div class="tour-card-expanded" data-category="local">
+          <div class="tour-card-slider">
+            <div class="slider-slides">
+              <div class="slide active">
+                <img src="assets/service_sightseeing.jpg" alt="Ooty Lake & Boat House">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Ooty Lake & Boat House</span>
+              </div>
+              <div class="slide">
+                <img src="assets/pkg_doddabetta.jpg" alt="Doddabetta Peak Viewpoint">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Doddabetta Peak Viewpoint</span>
+              </div>
+              <div class="slide">
+                <img src="assets/pkg_rosegarden.jpg" alt="Government Rose Garden">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Government Rose Garden</span>
+              </div>
+            </div>
+            <button class="slider-prev" onclick="prevSlide(this)" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="slider-next" onclick="nextSlide(this)" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="slider-dots">
+              <span class="dot active" onclick="setSlide(this, 0)"></span>
+              <span class="dot" onclick="setSlide(this, 1)"></span>
+              <span class="dot" onclick="setSlide(this, 2)"></span>
+            </div>
+            <span class="tour-cat-badge">Ooty Local</span>
+          </div>
+          <div class="tour-card-content">
+            <h3>Ooty Local Sightseeing Package</h3>
+            <p class="tour-desc">Explore Ooty's most popular attractions in one comfortable local taxi tour with convenient hotel pickup and drop.</p>
+            
+            <div class="tour-route-box">
+              <h5>Package Includes</h5>
+              <div class="tour-spots-list">
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Doddabetta Peak</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Botanical Garden</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Rose Garden</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Ooty Boat House</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Tea Museum</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Chocolate Factory</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Tea Garden</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Karnataka Garden</span>
+              </div>
+            </div>
+
+            <div class="tour-card-actions">
+              <button class="btn btn-primary-nav btn-full-action" onclick="openBookingModal('Ooty Local Sightseeing Package')"><i class="fa-solid fa-car"></i> Book This Package</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2: Ooty & Coonoor Tour Package -->
+        <div class="tour-card-expanded" data-category="coonoor">
+          <div class="tour-card-slider">
+            <div class="slider-slides">
+              <div class="slide active">
+                <img src="assets/pkg_dolphinsnose.jpg" alt="Dolphin's Nose & Catherine Falls">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Dolphin's Nose & Catherine Falls</span>
+              </div>
+              <div class="slide">
+                <img src="assets/Ancient Ceylon Tea Gardens Where Premium Tea Begins  Traditional Harvesting Methods.jpeg" alt="Coonoor Tea Estates">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Coonoor Tea Estates</span>
+              </div>
+              <div class="slide">
+                <img src="assets/Ooty , Tamil Nadu.jpeg" alt="Sim's Park & Valley View">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Sim's Park & Valley View</span>
+              </div>
+            </div>
+            <button class="slider-prev" onclick="prevSlide(this)" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="slider-next" onclick="nextSlide(this)" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="slider-dots">
+              <span class="dot active" onclick="setSlide(this, 0)"></span>
+              <span class="dot" onclick="setSlide(this, 1)"></span>
+              <span class="dot" onclick="setSlide(this, 2)"></span>
+            </div>
+            <span class="tour-cat-badge">Scenic Coonoor</span>
+          </div>
+          <div class="tour-card-content">
+            <h3>Ooty & Coonoor Tour Package</h3>
+            <p class="tour-desc">Discover scenic viewpoints, tea estates and popular Coonoor attractions with a comfortable private taxi journey.</p>
+            
+            <div class="tour-route-box">
+              <h5>Package Includes</h5>
+              <div class="tour-spots-list">
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Dolphin's Nose</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Lamb's Rock</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Sim's Park</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Wellington</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Tea Estate</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Sleeping Lady View Point</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Golf Course View</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Coonoor Sightseeing</span>
+              </div>
+            </div>
+
+            <div class="tour-card-actions">
+              <button class="btn btn-primary-nav btn-full-action" onclick="openBookingModal('Ooty & Coonoor Tour Package')"><i class="fa-solid fa-car"></i> Book This Package</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3: Ooty Pykara Taxi Package -->
+        <div class="tour-card-expanded" data-category="wildlife">
+          <div class="tour-card-slider">
+            <div class="slider-slides">
+              <div class="slide active">
+                <img src="assets/pkg_pykara_waterfall.jpg" alt="Pykara Waterfalls">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Pykara Waterfalls</span>
+              </div>
+              <div class="slide">
+                <img src="assets/pkg_9thmile.jpg" alt="9th Mile Pine Meadows">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> 9th Mile Pine Meadows</span>
+              </div>
+              <div class="slide">
+                <img src="assets/When Nature Speaks, Silence Listens.jpeg" alt="Pykara Lake & Boating">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Pykara Lake & Boating</span>
+              </div>
+            </div>
+            <button class="slider-prev" onclick="prevSlide(this)" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="slider-next" onclick="nextSlide(this)" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="slider-dots">
+              <span class="dot active" onclick="setSlide(this, 0)"></span>
+              <span class="dot" onclick="setSlide(this, 1)"></span>
+              <span class="dot" onclick="setSlide(this, 2)"></span>
+            </div>
+            <span class="tour-cat-badge">Pykara & Nature</span>
+          </div>
+          <div class="tour-card-content">
+            <h3>Ooty Pykara Taxi Package</h3>
+            <p class="tour-desc">Travel through the scenic western side of Ooty and explore lakes, waterfalls, pine forests, viewpoints and beautiful Nilgiri landscapes.</p>
+            
+            <div class="tour-route-box">
+              <h5>Package Includes</h5>
+              <div class="tour-spots-list">
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Pykara Boat House</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Pykara Waterfalls</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Pykara Lake</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Pine Forest</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> 9th Mile Shooting Point</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> 8th Mile</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Golf Course View</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Needle Rock View Point</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Mudumalai Route</span>
+              </div>
+            </div>
+
+            <div class="tour-card-actions">
+              <button class="btn btn-primary-nav btn-full-action" onclick="openBookingModal('Ooty Pykara Taxi Package')"><i class="fa-solid fa-car"></i> Book This Package</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 4: Avalanche Nature Tour -->
+        <div class="tour-card-expanded" data-category="wildlife">
+          <div class="tour-card-slider">
+            <div class="slider-slides">
+              <div class="slide active">
+                <img src="assets/A photograph of a serene landscape in Coorg, India, highlighting the majestic Nilgiri Hills shrouded.jpeg" alt="Avalanche Valley View">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Avalanche Valley View</span>
+              </div>
+              <div class="slide">
+                <img src="assets/When Nature Speaks, Silence Listens.jpeg" alt="Emerald Lake & Sanctuary">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Emerald Lake & Sanctuary</span>
+              </div>
+              <div class="slide">
+                <img src="assets/pkg_9thmile.jpg" alt="Forest Trails & Valleys">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Forest Trails & Valleys</span>
+              </div>
+            </div>
+            <button class="slider-prev" onclick="prevSlide(this)" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="slider-next" onclick="nextSlide(this)" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="slider-dots">
+              <span class="dot active" onclick="setSlide(this, 0)"></span>
+              <span class="dot" onclick="setSlide(this, 1)"></span>
+              <span class="dot" onclick="setSlide(this, 2)"></span>
+            </div>
+            <span class="tour-cat-badge">NATURE EXPERIENCE</span>
+          </div>
+          <div class="tour-card-content">
+            <h3>Avalanche Nature Tour</h3>
+            <p class="tour-desc">Enjoy a peaceful nature-focused taxi trip around Avalanche, scenic forest viewpoints and beautiful Nilgiri landscapes.</p>
+            
+            <div class="tour-route-box">
+              <h5>Package Includes</h5>
+              <div class="tour-spots-list">
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Avalanche View Point</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Emerald Lake</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Tea Estates</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Forest Areas</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Scenic Valley Stops</span>
+                <span class="spot-tag"><i class="fa-solid fa-location-dot"></i> Avalanche Surroundings</span>
+              </div>
+            </div>
+
+            <div class="tour-card-actions">
+              <button class="btn btn-primary-nav btn-full-action" onclick="openBookingModal('Avalanche Nature Tour')"><i class="fa-solid fa-car"></i> Book This Package</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 5: Nilgiri Trekking Transfer -->
+        <div class="tour-card-expanded" data-category="outstation">
+          <div class="tour-card-slider">
+            <div class="slider-slides">
+              <div class="slide active">
+                <img src="assets/route_outstation.jpg" alt="Nilgiri Trekking Routes">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Nilgiri Trekking Routes</span>
+              </div>
+              <div class="slide">
+                <img src="assets/pkg_dolphinsnose.jpg" alt="Mountain Viewpoints">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Mountain Viewpoints</span>
+              </div>
+              <div class="slide">
+                <img src="assets/A photograph of a serene landscape in Coorg, India, highlighting the majestic Nilgiri Hills shrouded.jpeg" alt="Masinagudi Wildlife Route">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Masinagudi Wildlife Route</span>
+              </div>
+            </div>
+            <button class="slider-prev" onclick="prevSlide(this)" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="slider-next" onclick="nextSlide(this)" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="slider-dots">
+              <span class="dot active" onclick="setSlide(this, 0)"></span>
+              <span class="dot" onclick="setSlide(this, 1)"></span>
+              <span class="dot" onclick="setSlide(this, 2)"></span>
+            </div>
+            <span class="tour-cat-badge">TREKKING TRANSFER</span>
+          </div>
+          <div class="tour-card-content">
+            <h3>Trekking & Viewpoint Taxi Transfers</h3>
+            <p class="tour-desc">Arrange convenient taxi transfers to selected trekking locations and scenic viewpoints across the Nilgiris and nearby hill regions.</p>
+            
+            <div class="tour-route-box">
+              <h5>Package Includes</h5>
+              <div class="tour-spots-list">
+                <span class="spot-tag"><i class="fa-solid fa-person-walking-luggage"></i> Nilgiri Trekking Locations</span>
+                <span class="spot-tag"><i class="fa-solid fa-route"></i> Masinagudi Routes</span>
+                <span class="spot-tag"><i class="fa-solid fa-mountain"></i> Viewpoint Transfers</span>
+                <span class="spot-tag"><i class="fa-solid fa-car-side"></i> Trek Pickup & Drop</span>
+                <span class="spot-tag"><i class="fa-solid fa-map"></i> Custom Route Planning</span>
+                <span class="spot-tag"><i class="fa-solid fa-taxi"></i> Private Taxi Service</span>
+              </div>
+            </div>
+
+            <div class="tour-card-actions">
+              <button class="btn btn-primary-nav btn-full-action" onclick="openBookingModal('Trekking & Viewpoint Taxi Transfers')"><i class="fa-solid fa-compass"></i> Plan Your Trip</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 6: Family & Group Travel -->
+        <div class="tour-card-expanded" data-category="local">
+          <div class="tour-card-slider">
+            <div class="slider-slides">
+              <div class="slide active">
+                <img src="assets/tempo_traveller.jpg" alt="Tempo Traveller Luxury Minibus">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Family & Group Travel Cab</span>
+              </div>
+              <div class="slide">
+                <img src="assets/pkg_doddabetta.jpg" alt="Group Tour Sightseeing">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Group Tour Sightseeing</span>
+              </div>
+              <div class="slide">
+                <img src="assets/suv.jpg" alt="Spacious Luxury SUV / Minibus">
+                <span class="slide-caption"><i class="fa-solid fa-camera"></i> Spacious Luxury SUV / Minibus</span>
+              </div>
+            </div>
+            <button class="slider-prev" onclick="prevSlide(this)" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="slider-next" onclick="nextSlide(this)" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="slider-dots">
+              <span class="dot active" onclick="setSlide(this, 0)"></span>
+              <span class="dot" onclick="setSlide(this, 1)"></span>
+              <span class="dot" onclick="setSlide(this, 2)"></span>
+            </div>
+            <span class="tour-cat-badge">GROUP TRAVEL</span>
+          </div>
+          <div class="tour-card-content">
+            <h3>Comfortable Ooty Taxi Services for Families & Groups</h3>
+            <p class="tour-desc">Travelling with family or friends? Choose a spacious vehicle and plan a customized sightseeing or outstation journey according to your group size, luggage and destinations.</p>
+            
+            <div class="tour-route-box">
+              <h5>Features Included</h5>
+              <div class="tour-spots-list">
+                <span class="spot-tag"><i class="fa-solid fa-check"></i> Spacious Vehicles</span>
+                <span class="spot-tag"><i class="fa-solid fa-check"></i> Flexible Sightseeing Routes</span>
+                <span class="spot-tag"><i class="fa-solid fa-check"></i> Hotel Pickup & Drop</span>
+                <span class="spot-tag"><i class="fa-solid fa-check"></i> Airport & Railway Transfers</span>
+                <span class="spot-tag"><i class="fa-solid fa-check"></i> Customized Group Trips</span>
+              </div>
+            </div>
+
+            <div class="tour-card-actions">
+              <button class="btn btn-primary-nav btn-full-action" onclick="openBookingModal('Family & Group Travel Taxi')"><i class="fa-solid fa-people-group"></i> Plan a Group Trip</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VEHICLE SECTION -->
+  <section class="vehicles-section" id="vehicles">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag center-tag"><i class="fa-solid fa-car-side"></i> CHOOSE YOUR RIDE</div>
+        <h2 class="section-title">Comfortable Cars for Every Ooty Journey</h2>
+        <p class="section-subtitle">
+          Choose a suitable vehicle for Ooty sightseeing, airport transfers, railway station pickups, family tours and outstation travel. Our team can help you select a vehicle based on passenger count, luggage and travel distance.
+        </p>
+      </div>
+
+      <div class="vehicle-cards-grid">
+
+        <!-- Hatchback / Compact Taxi -->
+        <div class="vehicle-card">
+          <div class="vehicle-img-holder">
+            <img src="assets/hatchback.jpg" alt="Hatchback / Compact Taxi Ooty">
+            <span class="vehicle-badge">Budget Friendly</span>
+          </div>
+          <div class="vehicle-card-body">
+            <div class="vehicle-title-wrap">
+              <h3>Hatchback / Compact Taxi</h3>
+              <span class="vehicle-subtitle-tag">Suitable for short trips and local Ooty travel</span>
+            </div>
+            <p class="vehicle-description">
+              A practical option for couples, solo travellers and small families. Hatchback taxis are suitable for local sightseeing, hotel transfers and shorter journeys.
+            </p>
+
+            <div class="vehicle-features-box">
+              <h5>Suitable for:</h5>
+              <ul class="vehicle-features-list">
+                <li><i class="fa-solid fa-check"></i> Up to 4 passengers</li>
+                <li><i class="fa-solid fa-check"></i> Light luggage</li>
+                <li><i class="fa-solid fa-check"></i> Local sightseeing</li>
+                <li><i class="fa-solid fa-check"></i> Hotel pickup and drop</li>
+              </ul>
+            </div>
+
+            <div class="vehicle-card-footer">
+              <button class="btn btn-primary-nav btn-full" onclick="openBookingModal('Hatchback / Compact Taxi')">
+                <i class="fa-solid fa-car"></i> Book Hatchback
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sedan Taxi -->
+        <div class="vehicle-card featured-vehicle">
+          <div class="vehicle-featured-ribbon">Most Popular</div>
+          <div class="vehicle-img-holder">
+            <img src="assets/sedan.jpg" alt="Sedan Taxi Ooty">
+            <span class="vehicle-badge badge-gold">Comfort Sedan</span>
+          </div>
+          <div class="vehicle-card-body">
+            <div class="vehicle-title-wrap">
+              <h3>Sedan Taxi</h3>
+              <span class="vehicle-subtitle-tag">Comfortable choice for couples and families</span>
+            </div>
+            <p class="vehicle-description">
+              A comfortable taxi option for couples, small families and travellers looking for extra comfort during local sightseeing, airport transfers and outstation journeys.
+            </p>
+
+            <div class="vehicle-features-box">
+              <h5>Suitable for:</h5>
+              <ul class="vehicle-features-list">
+                <li><i class="fa-solid fa-check"></i> Up to 4 passengers</li>
+                <li><i class="fa-solid fa-check"></i> Comfortable luggage space</li>
+                <li><i class="fa-solid fa-check"></i> Airport transfers</li>
+                <li><i class="fa-solid fa-check"></i> Local & outstation travel</li>
+              </ul>
+            </div>
+
+            <div class="vehicle-card-footer">
+              <button class="btn btn-primary-nav btn-full" onclick="openBookingModal('Sedan Taxi')">
+                <i class="fa-solid fa-car"></i> Book Sedan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUV / MUV Taxi -->
+        <div class="vehicle-card">
+          <div class="vehicle-img-holder">
+            <img src="assets/suv.jpg" alt="SUV / MUV Taxi Ooty">
+            <span class="vehicle-badge badge-dark">Luxury SUV</span>
+          </div>
+          <div class="vehicle-card-body">
+            <div class="vehicle-title-wrap">
+              <h3>SUV / MUV Taxi</h3>
+              <span class="vehicle-subtitle-tag">Spacious option for families and groups</span>
+            </div>
+            <p class="vehicle-description">
+              Choose an SUV or MUV when you need additional passenger and luggage space. Ideal for family vacations, sightseeing packages and longer journeys.
+            </p>
+
+            <div class="vehicle-features-box">
+              <h5>Suitable for:</h5>
+              <ul class="vehicle-features-list">
+                <li><i class="fa-solid fa-check"></i> 6–7 passengers</li>
+                <li><i class="fa-solid fa-check"></i> More luggage space</li>
+                <li><i class="fa-solid fa-check"></i> Family & group travel</li>
+                <li><i class="fa-solid fa-check"></i> Long-distance journeys</li>
+              </ul>
+            </div>
+
+            <div class="vehicle-card-footer">
+              <button class="btn btn-primary-nav btn-full" onclick="openBookingModal('SUV / MUV Taxi')">
+                <i class="fa-solid fa-car"></i> Book SUV / MUV
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR TAXI ROUTES SECTION -->
+  <section class="routes-section" id="routes">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag center-tag"><i class="fa-solid fa-route"></i> PICKUP, DROP & OUTSTATION TRAVEL</div>
+        <h2 class="section-title">Popular Taxi Routes to & From Ooty</h2>
+        <p class="section-subtitle">
+          Book reliable one-way and round-trip taxi services between Ooty, airports, railway stations and nearby cities. JC Cabs provides convenient hotel pickup, airport transfers, station transfers and outstation travel for individuals, families and groups.
+        </p>
+      </div>
+
+      <div class="routes-grid">
+
+        <!-- Route 1: Coimbatore Airport to Ooty -->
+        <div class="route-card">
+          <div class="route-list-icon"><i class="fa-solid fa-plane-arrival"></i></div>
+          <div class="route-card-body">
+            <div class="route-header-flex">
+              <h3>Coimbatore Airport to Ooty Taxi</h3>
+              <span class="route-badge">Airport Pickup</span>
+            </div>
+            <p>Airport pickup and hotel drop with real-time flight tracking.</p>
+          </div>
+        </div>
+
+        <!-- Route 2: Ooty to Coimbatore Airport -->
+        <div class="route-card">
+          <div class="route-list-icon"><i class="fa-solid fa-plane-departure"></i></div>
+          <div class="route-card-body">
+            <div class="route-header-flex">
+              <h3>Ooty to Coimbatore Airport Taxi</h3>
+              <span class="route-badge">Airport Transfer</span>
+            </div>
+            <p>Comfortable hotel pickup and timely airport transfer.</p>
+          </div>
+        </div>
+
+        <!-- Route 3: Mettupalayam to Ooty -->
+        <div class="route-card">
+          <div class="route-list-icon"><i class="fa-solid fa-train-subway"></i></div>
+          <div class="route-card-body">
+            <div class="route-header-flex">
+              <h3>Mettupalayam to Ooty Taxi</h3>
+              <span class="route-badge">Station Transfer</span>
+            </div>
+            <p>Railway station pickup and comfortable Ooty hill drop.</p>
+          </div>
+        </div>
+
+        <!-- Route 4: Coimbatore Railway Station to Ooty -->
+        <div class="route-card">
+          <div class="route-list-icon"><i class="fa-solid fa-train"></i></div>
+          <div class="route-card-body">
+            <div class="route-header-flex">
+              <h3>Coimbatore Railway Station to Ooty Taxi</h3>
+              <span class="route-badge">Station Transfer</span>
+            </div>
+            <p>Convenient door-to-door railway station transfer.</p>
+          </div>
+        </div>
+
+        <!-- Route 5: Mysore to Ooty -->
+        <div class="route-card">
+          <div class="route-list-icon"><i class="fa-solid fa-car-side"></i></div>
+          <div class="route-card-body">
+            <div class="route-header-flex">
+              <h3>Mysore to Ooty Taxi</h3>
+              <span class="route-badge">Intercity Travel</span>
+            </div>
+            <p>One-way and round-trip taxi service via Bandipur.</p>
+          </div>
+        </div>
+
+        <!-- Route 6: Ooty to Mysore -->
+        <div class="route-card">
+          <div class="route-list-icon"><i class="fa-solid fa-route"></i></div>
+          <div class="route-card-body">
+            <div class="route-header-flex">
+              <h3>Ooty to Mysore Taxi</h3>
+              <span class="route-badge">Outstation Drop</span>
+            </div>
+            <p>Comfortable private outstation transfer and palace trip.</p>
+          </div>
+        </div>
+
+        <!-- Route 7: Bangalore to Ooty -->
+        <div class="route-card">
+          <div class="route-list-icon"><i class="fa-solid fa-car"></i></div>
+          <div class="route-card-body">
+            <div class="route-header-flex">
+              <h3>Bangalore to Ooty Taxi</h3>
+              <span class="route-badge">Long Distance</span>
+            </div>
+            <p>Long-distance private taxi service with experienced drivers.</p>
+          </div>
+        </div>
+
+        <!-- Route 8: Ooty to Bangalore -->
+        <div class="route-card">
+          <div class="route-list-icon"><i class="fa-solid fa-arrow-right-long"></i></div>
+          <div class="route-card-body">
+            <div class="route-header-flex">
+              <h3>Ooty to Bangalore Taxi</h3>
+              <span class="route-badge">Outstation Return</span>
+            </div>
+            <p>One-way or return journey options to Bangalore city/airport.</p>
+          </div>
+        </div>
+
+        <!-- Route 9: Ooty to Coorg -->
+        <div class="route-card">
+          <div class="route-list-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+          <div class="route-card-body">
+            <div class="route-header-flex">
+              <h3>Ooty to Coorg Taxi</h3>
+              <span class="route-badge">Hill Station Link</span>
+            </div>
+            <p>Comfortable intercity hill-station transfer.</p>
+          </div>
+        </div>
+
+        <!-- Route 10: Ooty to Wayanad -->
+        <div class="route-card">
+          <div class="route-list-icon"><i class="fa-solid fa-tree"></i></div>
+          <div class="route-card-body">
+            <div class="route-header-flex">
+              <h3>Ooty to Wayanad Taxi</h3>
+              <span class="route-badge">Kerala Transfer</span>
+            </div>
+            <p>Private taxi service to Wayanad with scenic nature drive.</p>
+          </div>
+        </div>
+
+        <!-- Route 11: Ooty to Munnar -->
+        <div class="route-card">
+          <div class="route-list-icon"><i class="fa-solid fa-mug-hot"></i></div>
+          <div class="route-card-body">
+            <div class="route-header-flex">
+              <h3>Ooty to Munnar Taxi</h3>
+              <span class="route-badge">Tea County Link</span>
+            </div>
+            <p>Private intercity taxi booking across tea estate hills.</p>
+          </div>
+        </div>
+
+        <!-- Route 12: Ooty to Kochi -->
+        <div class="route-card">
+          <div class="route-list-icon"><i class="fa-solid fa-city"></i></div>
+          <div class="route-card-body">
+            <div class="route-header-flex">
+              <h3>Ooty to Kochi Taxi</h3>
+              <span class="route-badge">Port & Airport</span>
+            </div>
+            <p>Convenient city and airport transfer to Kochi / Cochin.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner-section">
+    <div class="container cta-box">
+      <div class="cta-content">
+        <div class="cta-badge">Need a Customized Tour Itinerary?</div>
+        <h2>Have Specific Places You Want to Visit in Ooty?</h2>
+        <p>Tell our local travel experts your group size, travel dates, and preferences. We will create a custom cab package for you in minutes.</p>
+        
+        <div class="cta-buttons">
+          <button class="btn btn-cta-primary" onclick="openBookingModal('Custom Tour Itinerary Request')">
+            <i class="fa-solid fa-calendar-check"></i> Request Custom Package
+          </button>
+          <a href="https://wa.me/919047512030?text=Hi%20JC%20Cabs,%20I%20want%20a%20custom%20Ooty%20tour%20itinerary" target="_blank" class="btn btn-cta-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp +91 90475 12030
+          </a>
+          <a href="tel:+919047512030" class="btn btn-cta-call">
+            <i class="fa-solid fa-phone"></i> Call Direct
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo">
+          <img src="assets/logo/dark mode full logo.png" alt="JC CABS & TOURS OOTY Logo" class="footer-logo-img">
+        </a>
+        <p class="footer-about">
+          Ooty's premiere taxi and tour operator. Reliable local sightseeing, airport transfers, and outstation cabs across Tamil Nadu, Karnataka, and Kerala.
+        </p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/919047512030" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Main Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tour-packages.html">Tour Packages</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Tour Highlights</h4>
+        <ul>
+          <li><a href="tour-packages.html">1-Day Classic Ooty Local</a></li>
+          <li><a href="tour-packages.html">Pykara & Wildlife Safari</a></li>
+          <li><a href="tour-packages.html">Coonoor Heritage & Tea Estates</a></li>
+          <li><a href="tour-packages.html">Avalanche Lake Eco Tour</a></li>
+          <li><a href="tour-packages.html">Coimbatore Airport Transfer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="contact-info-list">
+          <li><i class="fa-solid fa-location-dot"></i> Commercial Road, Near Charring Cross, Ooty, Nilgiris - 643001</li>
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:+919047512030">+91 90475 12030</a></li>
+          <li><i class="fa-solid fa-envelope"></i> booking@jccabsooty.com</li>
+          <li><i class="fa-solid fa-clock"></i> Open 24 Hours / 7 Days a week</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 JC CABS & TOURS OOTY. All Rights Reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY FLOATING QUICK ACTION BUTTONS -->
+  <div class="floating-contact-bar">
+    <a href="tel:+919047512030" class="float-btn float-call" title="Call Us Now">
+      <i class="fa-solid fa-phone"></i>
+      <span class="float-tooltip">Call +91 90475 12030</span>
+    </a>
+    <a href="https://wa.me/919047512030?text=Hi%20JC%20Cabs,%20I%20am%20interested%20in%20booking%20a%20tour%20package" target="_blank" class="float-btn float-wa" title="WhatsApp Us">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="float-tooltip">Instant WhatsApp Quote</span>
+    </a>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <h3 id="modalTitle">Book Your Tour Package</h3>
+          <p>Fill details for instant confirmation & best rate quote</p>
+        </div>
+        <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+      </div>
+
+      <form id="modalBookingForm" onsubmit="handleModalSubmit(event)">
+        <input type="hidden" id="modalPackageName" value="Tour Package Booking">
+        
+        <div class="modal-form-grid">
+          <div class="form-group">
+            <label for="mName">Your Full Name *</label>
+            <input type="text" id="mName" placeholder="e.g. Rahul Sharma" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mPhone">Mobile / WhatsApp Number *</label>
+            <input type="tel" id="mPhone" placeholder="e.g. 9876543210" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mDate">Travel Date *</label>
+            <input type="date" id="mDate" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mCab">Cab Preferred *</label>
+            <select id="mCab" required>
+              <option value="Sedan (Swift Dzire/Etios) - 4 Seater">Sedan (Swift Dzire/Etios) - 4 Seater</option>
+              <option value="SUV (Toyota Innova Crysta) - 7 Seater">SUV (Toyota Innova Crysta) - 7 Seater</option>
+              <option value="SUV (Ertiga) - 6 Seater">SUV (Ertiga) - 6 Seater</option>
+              <option value="Tempo Traveller - 12 Luxury Seater">Tempo Traveller - 12 Luxury Seater</option>
+              <option value="Tempo Traveller - 14-26 Seater">Tempo Traveller - 14-26 Seater</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="mPickup">Pickup Address / Hotel / Airport *</label>
+            <input type="text" id="mPickup" placeholder="e.g. Savoy Hotel Ooty / Coimbatore Airport" required>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="mNotes">Special Requirements (Optional)</label>
+            <textarea id="mNotes" rows="2" placeholder="e.g. Toy train assistance, child seat, morning pickup..."></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeBookingModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary-modal">
+            <i class="fa-brands fa-whatsapp"></i> Send Booking via WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

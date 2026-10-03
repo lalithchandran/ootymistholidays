@@ -1,0 +1,448 @@
+/* ==========================================================================
+   JC CABS & TOURS OOTY - INTERACTIVE JAVASCRIPT (NODE.JS CONNECTED)
+   ========================================================================== */
+
+/* THEME TOGGLE SYSTEM (LIGHT / DARK) */
+function initTheme() {
+  const savedTheme = localStorage.getItem('jc_theme') || localStorage.getItem('jv_theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('jc_theme', newTheme);
+  updateThemeIcon(newTheme);
+}
+
+function updateThemeIcon(theme) {
+  const themeIcons = document.querySelectorAll('#themeIcon');
+  themeIcons.forEach(icon => {
+    if (theme === 'dark') {
+      icon.className = 'fa-solid fa-sun';
+      icon.style.color = '#f59e0b';
+    } else {
+      icon.className = 'fa-solid fa-moon';
+      icon.style.color = '';
+    }
+  });
+}
+
+/* AUTO-SCROLL HORIZONTAL ROUTES LIST */
+function initRoutesAutoScroll() {
+  const grid = document.querySelector('.routes-grid');
+  if (!grid) return;
+
+  let isHovered = false;
+  let scrollStep = 1;
+
+  grid.addEventListener('mouseenter', () => isHovered = true);
+  grid.addEventListener('mouseleave', () => isHovered = false);
+  grid.addEventListener('touchstart', () => isHovered = true, { passive: true });
+  grid.addEventListener('touchend', () => isHovered = false, { passive: true });
+
+  setInterval(() => {
+    if (!isHovered) {
+      if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 2) {
+        grid.scrollLeft = 0;
+      } else {
+        grid.scrollLeft += scrollStep;
+      }
+    }
+  }, 25);
+}
+
+initTheme();
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Set default minimum date for date pickers to today
+  const today = new Date().toISOString().split('T')[0];
+  const modalDate = document.getElementById('mDate');
+  if (modalDate) {
+    modalDate.setAttribute('min', today);
+    modalDate.value = today;
+  }
+
+  // Initialize Fare Calculator default state
+  calculateFare();
+
+  // Initialize Custom Luxury Dropdowns
+  initCustomDropdowns();
+
+  // Initialize Routes Auto-Scroll
+  initRoutesAutoScroll();
+});
+
+/* 1. STICKY NAVBAR & MOBILE MENU TOGGLE */
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  if (navbar) {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  if (mobileMenuBtn && mainNav) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      const icon = mobileMenuBtn.querySelector('i');
+      if (icon) {
+        if (mainNav.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-xmark');
+        } else {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      });
+    });
+  }
+});
+
+/* 2. FILTERABLE TOUR PACKAGES */
+function filterPackages(category, btnElement) {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => btn.classList.remove('active'));
+  if (btnElement) {
+    btnElement.classList.add('active');
+  }
+
+  const packageCards = document.querySelectorAll('.package-card, .tour-card-expanded');
+  packageCards.forEach(card => {
+    const cardCategory = card.getAttribute('data-category');
+    if (category === 'all' || cardCategory === category) {
+      card.style.display = 'flex';
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 50);
+    } else {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(15px)';
+      setTimeout(() => {
+        card.style.display = 'none';
+      }, 300);
+    }
+  });
+}
+
+/* 3. INSTANT FARE & COST CALCULATOR */
+function calculateFare() {
+  const routeSelect = document.getElementById('calcRoute');
+  const cabSelect = document.getElementById('calcCabType');
+  const daysInput = document.getElementById('calcDays');
+  const priceDisplay = document.getElementById('calcTotalPrice');
+  const summaryText = document.getElementById('calcSummaryText');
+
+  if (!routeSelect || !cabSelect || !daysInput || !priceDisplay) return;
+
+  const basePrice = parseFloat(routeSelect.value) || 2200;
+  const cabMultiplier = parseFloat(cabSelect.value) || 1.0;
+  const days = parseInt(daysInput.value) || 1;
+
+  const selectedRouteName = routeSelect.options[routeSelect.selectedIndex].getAttribute('data-name') || 'Selected Tour';
+  const selectedCabName = cabSelect.options[cabSelect.selectedIndex].getAttribute('data-cab') || 'Sedan Cab';
+
+  const total = Math.round(basePrice * cabMultiplier * days);
+
+  priceDisplay.textContent = `₹${total.toLocaleString('en-IN')}`;
+  if (summaryText) {
+    summaryText.textContent = `Includes ${selectedCabName}, Driver Allowance & Fuel for ${days} Day(s) (${selectedRouteName})`;
+  }
+}
+
+function changeDays(delta) {
+  const daysInput = document.getElementById('calcDays');
+  let currentVal = parseInt(daysInput.value) || 1;
+  currentVal += delta;
+  if (currentVal < 1) currentVal = 1;
+  if (currentVal > 10) currentVal = 10;
+  daysInput.value = currentVal;
+  calculateFare();
+}
+
+function sendCalcBookingWhatsApp() {
+  const routeSelect = document.getElementById('calcRoute');
+  const cabSelect = document.getElementById('calcCabType');
+  const daysInput = document.getElementById('calcDays');
+  const priceDisplay = document.getElementById('calcTotalPrice').textContent;
+
+  const selectedRouteName = routeSelect.options[routeSelect.selectedIndex].getAttribute('data-name');
+  const selectedCabName = cabSelect.options[cabSelect.selectedIndex].getAttribute('data-cab');
+  const days = daysInput.value;
+
+  const text = `*INSTANT FARE ESTIMATE INQUIRY — JC CABS OOTY*\n` +
+    `--------------------------------------------------\n\n` +
+    `• *Route / Destination:* ${selectedRouteName}\n` +
+    `• *Vehicle Type:* ${selectedCabName}\n` +
+    `• *Duration:* ${days} Day(s)\n` +
+    `• *Estimated Fare:* ${priceDisplay}\n\n` +
+    `--------------------------------------------------\n` +
+    `Hello JC Cabs Team, I calculated this fare estimate on your website. Please confirm vehicle availability and final booking details. Thank you!`;
+
+  window.open(`https://wa.me/919047512030?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+/* 4. HERO QUICK SEARCH SUBMIT */
+function handleQuickSearch(event) {
+  event.preventDefault();
+  
+  const pickup = document.getElementById('pickupLocation').value;
+  const service = document.getElementById('serviceType').value;
+  const cab = document.getElementById('cabChoice').value;
+
+  openBookingModal(`${service} (${cab})`);
+  
+  const mPickup = document.getElementById('mPickup');
+  if (mPickup) {
+    mPickup.value = pickup;
+  }
+}
+
+/* 5. BOOKING MODAL CONTROL & NODE.JS API INTEGRATION */
+function openBookingModal(packageName) {
+  const modal = document.getElementById('bookingModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalPkgInput = document.getElementById('modalPackageName');
+
+  if (modalTitle) {
+    modalTitle.textContent = `Book ${packageName || 'Your Ooty Cab'}`;
+  }
+  if (modalPkgInput) {
+    modalPkgInput.value = packageName || 'General Booking';
+  }
+
+  if (modal) {
+    modal.classList.add('active');
+  }
+  initCustomDropdowns();
+}
+
+function closeBookingModal() {
+  const modal = document.getElementById('bookingModal');
+  if (modal) {
+    modal.classList.remove('active');
+  }
+}
+
+async function handleModalSubmit(event) {
+  event.preventDefault();
+
+  const packageName = document.getElementById('modalPackageName').value || 'General Cab Inquiry';
+  const name = document.getElementById('mName').value;
+  const phone = document.getElementById('mPhone').value;
+  const date = document.getElementById('mDate').value;
+  const cab = document.getElementById('mCab').value;
+  const pickup = document.getElementById('mPickup').value;
+  const notes = document.getElementById('mNotes').value;
+
+  // Send request to Node.js backend API (/api/book)
+  try {
+    fetch('/api/book', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ packageName, name, phone, date, cab, pickup, notes })
+    }).catch(err => console.log('Node.js API notice:', err));
+  } catch(e) {}
+
+  const text = `*NEW BOOKING REQUEST — JC CABS OOTY*\n` +
+    `--------------------------------------------------\n\n` +
+    `• *Customer Name:* ${name}\n` +
+    `• *Phone Number:* ${phone}\n` +
+    `• *Travel Date:* ${date}\n\n` +
+    `• *Service / Package:* ${packageName}\n` +
+    `• *Vehicle Chosen:* ${cab}\n` +
+    `• *Pickup Address:* ${pickup}\n` +
+    (notes ? `• *Special Notes:* ${notes}\n` : '') +
+    `\n--------------------------------------------------\n` +
+    `Hello JC Cabs Team, please review my booking request above and confirm availability along with the final quote. Thank you!`;
+
+  window.open(`https://wa.me/919047512030?text=${encodeURIComponent(text)}`, '_blank');
+  closeBookingModal();
+}
+
+/* 6. FAQ ACCORDION TOGGLE */
+function toggleFaq(buttonElement) {
+  const faqItem = buttonElement.parentElement;
+  const isActive = faqItem.classList.contains('active');
+
+  const allFaqItems = document.querySelectorAll('.faq-item');
+  allFaqItems.forEach(item => item.classList.remove('active'));
+
+  if (!isActive) {
+    faqItem.classList.add('active');
+  }
+}
+
+/* 7. IMAGE SLIDER FOR TOUR CARDS */
+function prevSlide(btn) {
+  const slider = btn.closest('.tour-card-slider');
+  const slides = slider.querySelectorAll('.slide');
+  const dots = slider.querySelectorAll('.dot');
+  let activeIndex = Array.from(slides).findIndex(s => s.classList.contains('active'));
+  if (activeIndex === -1) activeIndex = 0;
+  slides[activeIndex].classList.remove('active');
+  if (dots[activeIndex]) dots[activeIndex].classList.remove('active');
+
+  let newIndex = (activeIndex - 1 + slides.length) % slides.length;
+  slides[newIndex].classList.add('active');
+  if (dots[newIndex]) dots[newIndex].classList.add('active');
+}
+
+function nextSlide(btn) {
+  const slider = btn.closest('.tour-card-slider');
+  const slides = slider.querySelectorAll('.slide');
+  const dots = slider.querySelectorAll('.dot');
+  let activeIndex = Array.from(slides).findIndex(s => s.classList.contains('active'));
+  if (activeIndex === -1) activeIndex = 0;
+  slides[activeIndex].classList.remove('active');
+  if (dots[activeIndex]) dots[activeIndex].classList.remove('active');
+
+  let newIndex = (activeIndex + 1) % slides.length;
+  slides[newIndex].classList.add('active');
+  if (dots[newIndex]) dots[newIndex].classList.add('active');
+}
+
+function setSlide(dot, index) {
+  const slider = dot.closest('.tour-card-slider');
+  const slides = slider.querySelectorAll('.slide');
+  const dots = slider.querySelectorAll('.dot');
+  slides.forEach(s => s.classList.remove('active'));
+  dots.forEach(d => d.classList.remove('active'));
+  if (slides[index]) slides[index].classList.add('active');
+  if (dots[index]) dots[index].classList.add('active');
+}
+
+/* 8. CUSTOM LUXURY DROPDOWN ENHANCER */
+function initCustomDropdowns() {
+  const selects = document.querySelectorAll('select');
+  
+  selects.forEach(select => {
+    if (select.dataset.customInitialized) return;
+    select.dataset.customInitialized = 'true';
+    
+    // Hide native select visually but keep accessible
+    select.style.display = 'none';
+
+    // Create custom wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'custom-select-wrapper';
+    
+    // Create trigger button
+    const trigger = document.createElement('div');
+    trigger.className = 'custom-select-trigger';
+    
+    const label = document.createElement('span');
+    label.className = 'custom-select-label';
+    
+    const chevron = document.createElement('i');
+    chevron.className = 'fa-solid fa-chevron-down custom-chevron';
+    
+    trigger.appendChild(label);
+    trigger.appendChild(chevron);
+    wrapper.appendChild(trigger);
+    
+    // Create options menu
+    const menu = document.createElement('div');
+    menu.className = 'custom-select-menu';
+    
+    // Icon map based on option text keywords
+    function getOptionIcon(text) {
+      const lower = text.toLowerCase();
+      if (lower.includes('sedan') || lower.includes('dzire') || lower.includes('etios')) return 'fa-car-side';
+      if (lower.includes('suv') || lower.includes('innova') || lower.includes('ertiga')) return 'fa-truck-monster';
+      if (lower.includes('tempo') || lower.includes('traveller') || lower.includes('bus')) return 'fa-van-shuttle';
+      if (lower.includes('tour') || lower.includes('sightseeing')) return 'fa-map-location-dot';
+      if (lower.includes('airport') || lower.includes('station') || lower.includes('pickup')) return 'fa-plane-arrival';
+      return 'fa-car';
+    }
+
+    function updateTriggerText() {
+      const selectedOption = select.options[select.selectedIndex];
+      if (selectedOption) {
+        const text = selectedOption.textContent;
+        const iconClass = getOptionIcon(text);
+        label.innerHTML = `<i class="fa-solid ${iconClass}"></i> <span>${text}</span>`;
+      }
+    }
+
+    // Populate options
+    Array.from(select.options).forEach((opt, index) => {
+      const optionEl = document.createElement('div');
+      optionEl.className = 'custom-select-option';
+      if (opt.selected) optionEl.classList.add('selected');
+      
+      const text = opt.textContent;
+      const iconClass = getOptionIcon(text);
+      
+      optionEl.innerHTML = `
+        <div class="custom-select-option-content">
+          <i class="fa-solid ${iconClass}"></i>
+          <span>${text}</span>
+        </div>
+        <i class="fa-solid fa-check check-icon"></i>
+      `;
+      
+      optionEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        select.selectedIndex = index;
+        
+        // Trigger native change event for any attached listeners (like fare calc)
+        const changeEvent = new Event('change', { bubbles: true });
+        select.dispatchEvent(changeEvent);
+        
+        updateTriggerText();
+        
+        // Update selected state in menu
+        menu.querySelectorAll('.custom-select-option').forEach(el => el.classList.remove('selected'));
+        optionEl.classList.add('selected');
+        
+        wrapper.classList.remove('open');
+      });
+      
+      menu.appendChild(optionEl);
+    });
+
+    wrapper.appendChild(menu);
+    select.parentNode.insertBefore(wrapper, select);
+    wrapper.appendChild(select); // keep native select inside wrapper
+
+    updateTriggerText();
+
+    // Toggle dropdown open/close
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      // Close all other open dropdowns
+      document.querySelectorAll('.custom-select-wrapper.open').forEach(w => {
+        if (w !== wrapper) w.classList.remove('open');
+      });
+      wrapper.classList.toggle('open');
+    });
+  });
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', () => {
+  document.querySelectorAll('.custom-select-wrapper.open').forEach(w => w.classList.remove('open'));
+});
