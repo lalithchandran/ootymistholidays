@@ -3701,8 +3701,15 @@ html, body {
   color: #10b981;
 }
 
-[data-theme="dark"] .services-section {
-  background-color: #0b1329;
+/* All Card Container & Section Overrides for Dark Mode */
+[data-theme="dark"] .services-section,
+[data-theme="dark"] .reviews-section,
+[data-theme="dark"] .why-choose-section,
+[data-theme="dark"] .package-section,
+[data-theme="dark"] .fleet-section,
+[data-theme="dark"] .calc-section,
+[data-theme="dark"] .faq-section {
+  background-color: #0b1329 !important;
 }
 
 [data-theme="dark"] .service-card,
@@ -3710,18 +3717,72 @@ html, body {
 [data-theme="dark"] .vehicle-card,
 [data-theme="dark"] .tour-card-expanded,
 [data-theme="dark"] .route-card,
-[data-theme="dark"] .guarantee-card {
-  background-color: #1e293b;
-  border-color: #334155;
-  color: #f8fafc;
+[data-theme="dark"] .guarantee-card,
+[data-theme="dark"] .package-card,
+[data-theme="dark"] .why-card,
+[data-theme="dark"] .review-card,
+[data-theme="dark"] .calc-card,
+[data-theme="dark"] .faq-item {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
 }
 
-[data-theme="dark"] .fleet-body h3,
-[data-theme="dark"] .vehicle-title-wrap h3,
-[data-theme="dark"] .tour-card-content h3,
-[data-theme="dark"] .route-card-body h3,
-[data-theme="dark"] .service-body h3 {
-  color: #f8fafc;
+[data-theme="dark"] .package-card:hover,
+[data-theme="dark"] .why-card:hover,
+[data-theme="dark"] .review-card:hover,
+[data-theme="dark"] .calc-card:hover,
+[data-theme="dark"] .service-card:hover,
+[data-theme="dark"] .fleet-card:hover,
+[data-theme="dark"] .vehicle-card:hover,
+[data-theme="dark"] .tour-card-expanded:hover,
+[data-theme="dark"] .route-card:hover {
+  border-color: #10b981 !important;
+  box-shadow: 0 18px 40px rgba(16, 185, 129, 0.15) !important;
+}
+
+/* Specific Card Text & Inner Elements for Dark Mode */
+[data-theme="dark"] .review-text {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .review-user {
+  border-top-color: #334155 !important;
+}
+
+[data-theme="dark"] .user-info h5 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .user-info span {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .verified-badge {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  color: #34d399 !important;
+}
+
+[data-theme="dark"] .card-content,
+[data-theme="dark"] .card-footer {
+  background-color: transparent !important;
+  border-top-color: #334155 !important;
+}
+
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .card-desc,
+[data-theme="dark"] .card-highlights li {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .faq-question h4 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .faq-answer {
+  border-top-color: #334155 !important;
+  color: #cbd5e1 !important;
 }
 
 [data-theme="dark"] .spot-tag {
