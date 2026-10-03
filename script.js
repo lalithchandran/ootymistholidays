@@ -440,3 +440,76 @@ function initCustomDropdowns() {
 document.addEventListener('click', () => {
   document.querySelectorAll('.custom-select-wrapper.open').forEach(w => w.classList.remove('open'));
 });
+
+/* 6. REVIEW MODAL & DYNAMIC REVIEWS */
+function openReviewModal() {
+  const modal = document.getElementById('reviewModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeReviewModal() {
+  const modal = document.getElementById('reviewModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function setRating(rating) {
+  const starsInput = document.getElementById('rStars');
+  const ratingText = document.getElementById('ratingValueText');
+  const starBtns = document.querySelectorAll('.star-rating-select .star-btn');
+  
+  if (starsInput) starsInput.value = rating;
+  if (ratingText) ratingText.textContent = `${rating}.0 Stars`;
+  
+  starBtns.forEach((btn, index) => {
+    if (index < rating) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+}
+
+function handleReviewSubmit(event) {
+  event.preventDefault();
+  const name = document.getElementById('rName')?.value.trim() || 'Anonymous Traveler';
+  const location = document.getElementById('rLocation')?.value.trim() || 'Verified Guest';
+  const stars = parseInt(document.getElementById('rStars')?.value || '5', 10);
+  const message = document.getElementById('rMessage')?.value.trim() || '';
+
+  if (!message) return;
+
+  const reviewsGrid = document.querySelector('.reviews-grid');
+  if (reviewsGrid) {
+    const starIcons = '<i class="fa-solid fa-star"></i>'.repeat(stars) + '<i class="fa-regular fa-star"></i>'.repeat(5 - stars);
+    const initial = name.charAt(0).toUpperCase();
+
+    const newCard = document.createElement('div');
+    newCard.className = 'review-card';
+    newCard.style.border = '2px solid var(--accent-color)';
+    newCard.innerHTML = `
+      <div class="review-stars">${starIcons}</div>
+      <p class="review-text">"${message}"</p>
+      <div class="review-author">
+        <div class="author-avatar">${initial}</div>
+        <div>
+          <h4>${name}</h4>
+          <span class="verified"><i class="fa-solid fa-circle-check"></i> ${location} (Just Now)</span>
+        </div>
+      </div>
+    `;
+
+    reviewsGrid.insertBefore(newCard, reviewsGrid.firstChild);
+  }
+
+  alert('Thank you for your review! Your feedback has been added.');
+  document.getElementById('reviewForm')?.reset();
+  setRating(5);
+  closeReviewModal();
+}
+

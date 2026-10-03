@@ -165,16 +165,21 @@
     </div>
   </section>
 
-  <!-- VERIFIED TOURIST REVIEWS SECTION -->
+  <!-- VERIFIED TOURIST REVIEWS SECTION WITH WRITE A REVIEW BUTTON -->
   <section class="reviews-section" id="reviews">
     <div class="container">
-      <div class="section-header text-center">
-        <div class="section-tag center-tag"><i class="fa-solid fa-thumbs-up"></i> Verified Tourist Reviews</div>
-        <h2 class="section-title">What Our Travelers Say About JC Cabs</h2>
-        <p class="section-subtitle">Over 2,500+ happy families, couples, and group travelers trust JC Cabs for their Nilgiri holiday.</p>
+      <div class="reviews-header-flex">
+        <div class="section-header text-left">
+          <div class="section-tag"><i class="fa-solid fa-thumbs-up"></i> Verified Tourist Reviews</div>
+          <h2 class="section-title">What Our Travelers Say About JC Cabs</h2>
+          <p class="section-subtitle">Over 2,500+ happy families, couples, and group travelers trust JC Cabs for their Nilgiri holiday.</p>
+        </div>
+        <button class="btn btn-primary-nav btn-write-review" onclick="openReviewModal()">
+          <i class="fa-solid fa-pen-to-square"></i> Write a Review
+        </button>
       </div>
 
-      <div class="reviews-grid">
+      <div class="reviews-grid" id="reviewsGrid">
 
         <div class="review-card">
           <div class="review-card-header">
@@ -227,6 +232,69 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- FREQUENTLY ASKED QUESTIONS (FAQ) SECTION -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag center-tag"><i class="fa-solid fa-circle-question"></i> FREQUENTLY ASKED QUESTIONS</div>
+        <h2 class="section-title">Everything You Need to Know Before Booking</h2>
+        <p class="section-subtitle">Quick answers to common questions about Ooty cab bookings, pricing, hill drivers, and sightseeing tours.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item active">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <h4>How do I book a cab or tour package with JC Cabs?</h4>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>You can book instantly by filling out the online booking form on our website, clicking the "Book via WhatsApp" button to chat directly with our team, or calling us at +91 90475 12030 for immediate confirmation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <h4>Are fuel charges, toll fees, and driver batta included in the fare?</h4>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! All our quotes are 100% transparent and all-inclusive of fuel, driver allowance (batta), and vehicle charges. Parking fees at specific tourist spots are clear upfront with zero hidden costs.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <h4>What types of vehicles are available in your fleet?</h4>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>We offer comfortable Sedan cabs (Swift Dzire / Etios for up to 4 passengers), spacious SUV cabs (Toyota Innova / Crysta for up to 7 passengers), and 12 to 26-seater Tempo Travellers for larger group sightseeing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <h4>Are your drivers experienced on mountain roads and 36 hairpin bends?</h4>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. All JC Cabs drivers are licensed Nilgiri locals with over 5 to 10+ years of driving experience on hill terrain and mountain curves. They also act as polite, helpful local guides!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <h4>Can I customize my Ooty sightseeing package or pickup timings?</h4>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, all our sightseeing tour packages are 100% customizable. You can adjust pickup times from hotels or Coimbatore Airport and pick the exact tourist spots you wish to visit.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -341,22 +409,22 @@
         
         <div class="modal-form-grid">
           <div class="form-group">
-            <label for="mName">Your Full Name *</label>
+            <label for="mName"><i class="fa-solid fa-user"></i> Your Full Name *</label>
             <input type="text" id="mName" placeholder="e.g. Rahul Sharma" required>
           </div>
 
           <div class="form-group">
-            <label for="mPhone">Mobile / WhatsApp Number *</label>
+            <label for="mPhone"><i class="fa-solid fa-phone"></i> Mobile / WhatsApp Number *</label>
             <input type="tel" id="mPhone" placeholder="e.g. 9876543210" required>
           </div>
 
           <div class="form-group">
-            <label for="mDate">Travel Date *</label>
+            <label for="mDate"><i class="fa-solid fa-calendar"></i> Travel Date *</label>
             <input type="date" id="mDate" required>
           </div>
 
           <div class="form-group">
-            <label for="mCab">Cab Preferred *</label>
+            <label for="mCab"><i class="fa-solid fa-taxi"></i> Cab Preferred *</label>
             <select id="mCab" required>
               <option value="Sedan (Swift Dzire/Etios) - 4 Seater">Sedan (Swift Dzire/Etios) - 4 Seater</option>
               <option value="SUV (Toyota Innova Crysta) - 7 Seater">SUV (Toyota Innova Crysta) - 7 Seater</option>
@@ -367,12 +435,12 @@
           </div>
 
           <div class="form-group full-width">
-            <label for="mPickup">Pickup Address / Hotel / Airport *</label>
+            <label for="mPickup"><i class="fa-solid fa-location-dot"></i> Pickup Address / Hotel / Airport *</label>
             <input type="text" id="mPickup" placeholder="e.g. Savoy Hotel Ooty / Coimbatore Airport" required>
           </div>
 
           <div class="form-group full-width">
-            <label for="mNotes">Special Requirements (Optional)</label>
+            <label for="mNotes"><i class="fa-solid fa-pen-to-square"></i> Special Requirements (Optional)</label>
             <textarea id="mNotes" rows="2" placeholder="e.g. Toy train assistance, child seat, morning pickup..."></textarea>
           </div>
         </div>
@@ -381,6 +449,58 @@
           <button type="button" class="btn btn-secondary" onclick="closeBookingModal()">Cancel</button>
           <button type="submit" class="btn btn-primary-modal">
             <i class="fa-brands fa-whatsapp"></i> Book via WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- WRITE A REVIEW MODAL -->
+  <div class="modal-backdrop" id="reviewModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <h3>Share Your Experience</h3>
+          <p>Write a review for JC Cabs & Tours Ooty</p>
+        </div>
+        <button class="modal-close" onclick="closeReviewModal()">&times;</button>
+      </div>
+
+      <form id="reviewForm" onsubmit="handleReviewSubmit(event)">
+        <div class="modal-form-grid">
+          <div class="form-group">
+            <label for="rName"><i class="fa-solid fa-user"></i> Your Name *</label>
+            <input type="text" id="rName" placeholder="e.g. Priyanshu Roy" required>
+          </div>
+
+          <div class="form-group">
+            <label for="rLocation"><i class="fa-solid fa-location-dot"></i> City / Trip Details *</label>
+            <input type="text" id="rLocation" placeholder="e.g. Family Trip, Bangalore • Ooty Tour" required>
+          </div>
+
+          <div class="form-group full-width">
+            <label><i class="fa-solid fa-star"></i> Your Rating *</label>
+            <div class="star-rating-select">
+              <button type="button" class="star-btn active" onclick="setRating(1)"><i class="fa-solid fa-star"></i></button>
+              <button type="button" class="star-btn active" onclick="setRating(2)"><i class="fa-solid fa-star"></i></button>
+              <button type="button" class="star-btn active" onclick="setRating(3)"><i class="fa-solid fa-star"></i></button>
+              <button type="button" class="star-btn active" onclick="setRating(4)"><i class="fa-solid fa-star"></i></button>
+              <button type="button" class="star-btn active" onclick="setRating(5)"><i class="fa-solid fa-star"></i></button>
+              <span id="ratingValueText" style="margin-left: 0.8rem; font-weight: 700; color: #FFB800;">5.0 Stars</span>
+            </div>
+            <input type="hidden" id="rStars" value="5">
+          </div>
+
+          <div class="form-group full-width">
+            <label for="rMessage"><i class="fa-solid fa-comment-dots"></i> Your Review Message *</label>
+            <textarea id="rMessage" rows="3" placeholder="Tell other travelers about driver punctuality, vehicle cleanliness, sightseeing experience..." required></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeReviewModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary-modal">
+            <i class="fa-solid fa-paper-plane"></i> Submit Review
           </button>
         </div>
       </form>
