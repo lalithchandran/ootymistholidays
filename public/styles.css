@@ -52,6 +52,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -61,6 +62,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: auto;
 }
 
 img {
@@ -2445,6 +2448,43 @@ html, body {
     box-sizing: border-box !important;
   }
 
+  /* Mobile Horizontal Scroll Containers & Cards */
+  .routes-grid {
+    gap: 0.9rem !important;
+    padding-bottom: 1.2rem !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x pan-y !important;
+  }
+
+  .route-card {
+    flex: 0 0 290px !important;
+    width: 290px !important;
+    max-width: 85vw !important;
+    padding: 1.1rem !important;
+    gap: 0.85rem !important;
+    border-radius: 16px !important;
+  }
+
+  .route-card-body h3 {
+    font-size: 0.98rem !important;
+  }
+
+  .route-card-body p {
+    font-size: 0.84rem !important;
+  }
+
+  .tour-filter-bar {
+    gap: 0.5rem !important;
+    padding: 0.5rem 0.2rem !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x pan-y !important;
+  }
+
+  .filter-btn {
+    padding: 0.6rem 1.1rem !important;
+    font-size: 0.84rem !important;
+  }
+
   /* Site Header Mobile Layout */
   .site-header {
     position: sticky;
@@ -3474,9 +3514,17 @@ html, body {
   gap: 1.25rem;
   margin-top: 2rem;
   padding: 0.5rem 0.25rem 1.4rem 0.25rem;
-  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
   scrollbar-width: thin;
+  cursor: grab;
+  user-select: none;
+}
+
+.routes-grid:active {
+  cursor: grabbing;
 }
 
 .routes-grid::-webkit-scrollbar {
@@ -3501,7 +3549,6 @@ html, body {
   flex: 0 0 340px;
   width: 340px;
   max-width: 340px;
-  scroll-snap-align: start;
   background: #FFFFFF;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);

@@ -30,28 +30,129 @@ function updateThemeIcon(theme) {
   });
 }
 
-/* AUTO-SCROLL HORIZONTAL ROUTES LIST */
+/* ULTRA-SMOOTH HORIZONTAL ROUTES LIST AUTO-SCROLL & TOUCH DRAG */
 function initRoutesAutoScroll() {
   const grid = document.querySelector('.routes-grid');
   if (!grid) return;
 
-  let isHovered = false;
-  let scrollStep = 1;
+  let isInteracting = false;
+  let cooldownTimer = null;
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
 
-  grid.addEventListener('mouseenter', () => isHovered = true);
-  grid.addEventListener('mouseleave', () => isHovered = false);
-  grid.addEventListener('touchstart', () => isHovered = true, { passive: true });
-  grid.addEventListener('touchend', () => isHovered = false, { passive: true });
+  function pauseAutoScroll() {
+    isInteracting = true;
+    if (cooldownTimer) clearTimeout(cooldownTimer);
+    // Pause auto-scroll during touch/drag/scroll gesture and wait 4.5s after gesture ends
+    cooldownTimer = setTimeout(() => {
+      isInteracting = false;
+    }, 4500);
+  }
 
-  setInterval(() => {
-    if (!isHovered) {
-      if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 2) {
-        grid.scrollLeft = 0;
-      } else {
-        grid.scrollLeft += scrollStep;
+  // Mouse Hover
+  grid.addEventListener('mouseenter', () => isInteracting = true);
+  grid.addEventListener('mouseleave', () => {
+    if (!isDown) isInteracting = false;
+  });
+
+  // Touch Events for Mobile
+  grid.addEventListener('touchstart', pauseAutoScroll, { passive: true });
+  grid.addEventListener('touchmove', pauseAutoScroll, { passive: true });
+  grid.addEventListener('touchend', pauseAutoScroll, { passive: true });
+
+  // Native Touch Scroll / Swipe Inertia
+  grid.addEventListener('scroll', pauseAutoScroll, { passive: true });
+
+  // Mouse Drag Support for Desktop
+  grid.addEventListener('mousedown', (e) => {
+    isDown = true;
+    pauseAutoScroll();
+    startX = e.pageX - grid.offsetLeft;
+    scrollLeft = grid.scrollLeft;
+  });
+
+  grid.addEventListener('mouseleave', () => {
+    isDown = false;
+  });
+
+  grid.addEventListener('mouseup', () => {
+    isDown = false;
+    pauseAutoScroll();
+  });
+
+  grid.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    pauseAutoScroll();
+    const x = e.pageX - grid.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    grid.scrollLeft = scrollLeft - walk;
+  });
+
+  // 60fps RequestAnimationFrame Loop
+  let accumulatedScroll = 0;
+  function smoothStep() {
+    if (!isInteracting && grid.scrollWidth > grid.clientWidth) {
+      accumulatedScroll += 0.5;
+      if (accumulatedScroll >= 1) {
+        const px = Math.floor(accumulatedScroll);
+        accumulatedScroll -= px;
+        if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 2) {
+          grid.scrollLeft = 0;
+        } else {
+          grid.scrollLeft += px;
+        }
       }
     }
-  }, 25);
+    requestAnimationFrame(smoothStep);
+  }
+
+  requestAnimationFrame(smoothStep);
+}
+
+/* HORIZONTAL FILTER BAR TOUCH & MOUSE DRAG SCRAPING */
+function initFilterBarDrag() {
+  const filterBar = document.querySelector('.tour-filter-bar');
+  if (!filterBar) return;
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  filterBar.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - filterBar.offsetLeft;
+    scrollLeft = filterBar.scrollLeft;
+  });
+  filterBar.addEventListener('mouseleave', () => isDown = false);
+  filterBar.addEventListener('mouseup', () => isDown = false);
+  filterBar.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - filterBar.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    filterBar.scrollLeft = scrollLeft - walk;
+  });
+}
+
+/* SMOOTH ANCHOR LINK SCROLLING FOR MOBILE NAVIGATION */
+function initSmoothAnchorScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
 }
 
 initTheme();
@@ -71,8 +172,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Custom Luxury Dropdowns
   initCustomDropdowns();
 
-  // Initialize Routes Auto-Scroll
+  // Initialize Routes Auto-Scroll & Drag
   initRoutesAutoScroll();
+
+  // Initialize Filter Bar Drag
+  initFilterBarDrag();
+
+  // Initialize Smooth Anchor Scroll
+  initSmoothAnchorScroll();
 });
 
 /* 1. STICKY NAVBAR & MOBILE MENU TOGGLE */

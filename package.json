@@ -2,11 +2,6 @@
   "name": "jc-cabs-ooty",
   "version": "1.0.0",
   "description": "JC CABS & TOURS OOTY - Node.js Express Web Application",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
   "keywords": [
     "ooty-cabs",
     "taxi-booking",
@@ -14,8 +9,22 @@
     "nodejs",
     "jc-cabs"
   ],
-  "author": "JC Cabs Ooty",
+  "homepage": "https://github.com/lalithchandran/jc-cabs#readme",
+  "bugs": {
+    "url": "https://github.com/lalithchandran/jc-cabs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalithchandran/jc-cabs.git"
+  },
   "license": "ISC",
+  "author": "JC Cabs Ooty",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
