@@ -2092,6 +2092,10 @@ ul {
   color: #CBD5E1;
 }
 
+.contact-info-list li a {
+  white-space: nowrap;
+}
+
 .contact-info-list li i {
   color: #10B981;
   margin-top: 3px;
