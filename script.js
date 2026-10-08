@@ -365,7 +365,7 @@ function handleModalSubmit(event) {
   const pickup = document.getElementById('mPickup').value;
   const notes = document.getElementById('mNotes').value;
 
-  const text = `*NEW BOOKING REQUEST — OOTY MIST HOLIDAYS*\n` +
+  const text = `**NEW BOOKING REQUEST — OOTY MIST HOLIDAYS**\n` +
     `--------------------------------------------------\n\n` +
     `• *Customer Name:* ${name}\n` +
     `• *Phone Number:* ${phone}\n` +
