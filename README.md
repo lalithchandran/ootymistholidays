@@ -1,6 +1,6 @@
-# JC CABS & TOURS OOTY — Node.js Application
+# OOTY MIST HOLIDAYS — Node.js Application
 
-A modern, responsive Node.js Express web application for **JC Cabs Ooty** featuring interactive taxi fare estimation, package inquiries, route booking, and WhatsApp API integration.
+A modern, responsive Node.js Express web application for **Ooty Mist Holidays** featuring interactive taxi fare estimation, package inquiries, route booking, and WhatsApp API integration.
 
 ---
 
@@ -41,7 +41,7 @@ Open `http://localhost:3000` in your web browser.
 ## 📁 Project Directory Structure
 
 ```
-JC CABS/
+OOTY MIST HOLIDAYS/
 ├── .env                  # Environment configuration
 ├── .gitignore            # Git ignore rules
 ├── package.json          # Node.js project manifest & dependencies

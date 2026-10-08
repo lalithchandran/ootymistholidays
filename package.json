@@ -1,13 +1,13 @@
 {
-  "name": "jc-cabs-ooty",
+  "name": "ooty-mist-holidays",
   "version": "1.0.0",
-  "description": "JC CABS & TOURS OOTY - Node.js Express Web Application",
+  "description": "OOTY MIST HOLIDAYS - Node.js Express Web Application",
   "keywords": [
-    "ooty-cabs",
+    "ooty-mist-holidays",
+    "ooty-tours",
     "taxi-booking",
     "express",
-    "nodejs",
-    "jc-cabs"
+    "nodejs"
   ],
   "homepage": "https://github.com/lalithchandran/jc-cabs#readme",
   "bugs": {
@@ -18,7 +18,7 @@
     "url": "git+https://github.com/lalithchandran/jc-cabs.git"
   },
   "license": "ISC",
-  "author": "JC Cabs Ooty",
+  "author": "Ooty Mist Holidays",
   "type": "commonjs",
   "main": "server.js",
   "scripts": {

@@ -115,7 +115,7 @@ app.get('*', (req, res) => {
 // Start Server
 app.listen(PORT, () => {
   console.log(`==================================================`);
-  console.log(`  JC CABS OOTY NODE.JS SERVER RUNNING AT:`);
+  console.log(`  OOTY MIST HOLIDAYS NODE.JS SERVER RUNNING AT:`);
   console.log(`  http://localhost:${PORT}`);
   console.log(`==================================================`);
 });

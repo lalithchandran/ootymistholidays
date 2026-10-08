@@ -1,5 +1,5 @@
 /* ==========================================================================
-   JC CABS & TOURS OOTY - MAIN STYLESHEET
+   OOTY MIST HOLIDAYS - MAIN STYLESHEET
    Design Theme: Modern Luxury Hill Travel (ROAMLY Inspired Aesthetics)
    ========================================================================== */
 
@@ -356,9 +356,41 @@ ul {
   flex-shrink: 0;
 }
 
+.brand-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-green);
+  letter-spacing: 0.5px;
+}
+
+.brand-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-rust);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .brand-title {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .brand-subtitle {
+  color: #E58C6D;
+}
+
 .brand-logo:hover .brand-logo-img,
-.brand-logo:hover .brand-logo-text-img {
-  transform: scale(1.06);
+.brand-logo:hover .brand-logo-text-img,
+.brand-logo:hover .brand-text-wrapper {
+  transform: scale(1.04);
 }
 
 /* Light Theme (Default) Logo Display */

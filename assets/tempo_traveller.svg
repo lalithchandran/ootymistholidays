@@ -166,10 +166,10 @@
     <path d="M 175 495 A 55 55 0 0 1 285 495" fill="none" stroke="#334155" stroke-width="6"/>
     <path d="M 575 495 A 55 55 0 0 1 685 495" fill="none" stroke="#334155" stroke-width="6"/>
 
-    <!-- JC CABS BRAND BADGE ON BUS -->
-    <rect x="360" y="445" width="220" height="32" rx="6" fill="#0f382c"/>
+    <!-- OOTY MIST HOLIDAYS BRAND BADGE ON BUS -->
+    <rect x="340" y="445" width="260" height="32" rx="6" fill="#0f382c"/>
     <text x="470" y="466" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">
-      JC CABS TEMPO TRAVELLER
+      OOTY MIST HOLIDAYS
     </text>
   </g>
 

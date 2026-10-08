@@ -1,10 +1,10 @@
 /* ==========================================================================
-   JC CABS & TOURS OOTY - INTERACTIVE JAVASCRIPT
+   OOTY MIST HOLIDAYS - INTERACTIVE JAVASCRIPT
    ========================================================================== */
 
 /* THEME TOGGLE SYSTEM (LIGHT / DARK) */
 function initTheme() {
-  const savedTheme = localStorage.getItem('jc_theme') || localStorage.getItem('jv_theme') || 'light';
+  const savedTheme = localStorage.getItem('oomh_theme') || localStorage.getItem('jc_theme') || localStorage.getItem('jv_theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
 }
@@ -13,7 +13,7 @@ function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
   const newTheme = currentTheme === 'light' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('jc_theme', newTheme);
+  localStorage.setItem('oomh_theme', newTheme);
   updateThemeIcon(newTheme);
 }
 
@@ -299,14 +299,14 @@ function sendCalcBookingWhatsApp() {
   const selectedCabName = cabSelect.options[cabSelect.selectedIndex].getAttribute('data-cab');
   const days = daysInput.value;
 
-  const text = `*INSTANT FARE ESTIMATE INQUIRY — JC CABS OOTY*\n` +
+  const text = `*INSTANT FARE ESTIMATE INQUIRY — OOTY MIST HOLIDAYS*\n` +
     `--------------------------------------------------\n\n` +
     `• *Route / Destination:* ${selectedRouteName}\n` +
     `• *Vehicle Type:* ${selectedCabName}\n` +
     `• *Duration:* ${days} Day(s)\n` +
     `• *Estimated Fare:* ${priceDisplay}\n\n` +
     `--------------------------------------------------\n` +
-    `Hello JC Cabs Team, I calculated this fare estimate on your website. Please confirm vehicle availability and final booking details. Thank you!`;
+    `Hello Ooty Mist Holidays Team, I calculated this fare estimate on your website. Please confirm vehicle availability and final booking details. Thank you!`;
 
   window.open(`https://wa.me/919047512030?text=${encodeURIComponent(text)}`, '_blank');
 }
@@ -365,7 +365,7 @@ function handleModalSubmit(event) {
   const pickup = document.getElementById('mPickup').value;
   const notes = document.getElementById('mNotes').value;
 
-  const text = `*NEW BOOKING REQUEST — JC CABS OOTY*\n` +
+  const text = `*NEW BOOKING REQUEST — OOTY MIST HOLIDAYS*\n` +
     `--------------------------------------------------\n\n` +
     `• *Customer Name:* ${name}\n` +
     `• *Phone Number:* ${phone}\n` +
@@ -375,7 +375,7 @@ function handleModalSubmit(event) {
     `• *Pickup Address:* ${pickup}\n` +
     (notes ? `• *Special Notes:* ${notes}\n` : '') +
     `\n--------------------------------------------------\n` +
-    `Hello JC Cabs Team, please review my booking request above and confirm availability along with the final quote. Thank you!`;
+    `Hello Ooty Mist Holidays Team, please review my booking request above and confirm availability along with the final quote. Thank you!`;
 
   window.open(`https://wa.me/919047512030?text=${encodeURIComponent(text)}`, '_blank');
   closeBookingModal();

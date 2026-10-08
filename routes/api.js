@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/health', (req, res) => {
   res.json({
     status: 'ok',
-    service: 'JC Cabs Ooty Node.js API',
+    service: 'Ooty Mist Holidays Node.js API',
     timestamp: new Date().toISOString()
   });
 });
@@ -57,7 +57,7 @@ router.post('/book', (req, res) => {
   }
 
   // Generate Booking Reference Number
-  const bookingId = 'JCC-' + Math.floor(100000 + Math.random() * 900000);
+  const bookingId = 'OMH-' + Math.floor(100000 + Math.random() * 900000);
   
   const bookingDetails = {
     bookingId,
